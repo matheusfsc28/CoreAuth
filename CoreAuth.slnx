@@ -1,1 +1,7 @@
-<Solution />
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/CoreAuth.Domain/CoreAuth.Domain.csproj" Id="b2e66a95-b817-4946-b11a-2e34b2530f4b" />
+    <Project Path="src/CoreAuth.Exceptions/CoreAuth.Exceptions.csproj" Id="761fcce2-cf34-411c-95b9-e97ad1c7f3b1" />
+  </Folder>
+  <Folder Name="/tests/" />
+</Solution>
