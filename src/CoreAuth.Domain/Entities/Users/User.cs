@@ -1,4 +1,5 @@
 ﻿using CoreAuth.Domain.Entities.Base;
+using CoreAuth.Domain.Entities.Tokens;
 using CoreAuth.Domain.Enums.Users;
 using CoreAuth.Exceptions;
 using CoreAuth.Exceptions.BaseExceptions;
@@ -11,6 +12,9 @@ namespace CoreAuth.Domain.Entities.Users
         public string Email { get; private set; }
         public string PasswordHash { get; private set; }
         public UserType Type { get; private set; }
+
+        public IEnumerable<PasswordResetToken> PasswordResetTokens { get; private set; } = [];
+        public IEnumerable<RefreshToken> RefreshTokens { get; private set; } = [];
 
         private User() { }
 
@@ -27,7 +31,7 @@ namespace CoreAuth.Domain.Entities.Users
         public void Update(string? name, string? email, string? passwordHash, UserType? type)
         {
             Name = name ?? Name;
-            Email = email ?? Email;
+            Email = email?.ToLowerInvariant() ?? Email;
             PasswordHash = passwordHash ?? PasswordHash;
             Type = type ?? Type;
 
@@ -41,8 +45,14 @@ namespace CoreAuth.Domain.Entities.Users
             if (string.IsNullOrEmpty(Name))
                 errors.Add(ResourceMessagesException.NAME_EMPTY);
 
+            if (Name.Length > 200)
+                errors.Add(string.Format(ResourceMessagesException.NAME_MAX_LENGTH, 200));
+
             if (string.IsNullOrEmpty(Email))
                 errors.Add(ResourceMessagesException.EMAIL_EMPTY);
+
+            if (Email.Length > 200)
+                errors.Add(string.Format(ResourceMessagesException.EMAIL_MAX_LENGTH, 200));
 
             if (string.IsNullOrEmpty(PasswordHash))
                 errors.Add(ResourceMessagesException.PASSWORD_EMPTY);

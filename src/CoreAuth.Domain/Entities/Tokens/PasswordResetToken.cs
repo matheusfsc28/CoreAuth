@@ -1,4 +1,5 @@
 ﻿using CoreAuth.Domain.Entities.Base;
+using CoreAuth.Domain.Entities.Users;
 using CoreAuth.Exceptions;
 using CoreAuth.Exceptions.BaseExceptions;
 
@@ -13,14 +14,15 @@ namespace CoreAuth.Domain.Entities.Tokens
 
         public bool IsExpired => DateTime.UtcNow >= ExpiresAt;
 
+        public User? User { get; private set; }
+
         private PasswordResetToken() { }
 
-        public PasswordResetToken(string token, Guid userId, int expirationInMinutes = 30)
+        public PasswordResetToken(string token, DateTime expiresAt, Guid userId)
         {
-
             Token = token;
+            ExpiresAt = expiresAt;
             UserId = userId;
-            ExpiresAt = DateTime.UtcNow.AddMinutes(expirationInMinutes);
             IsUsed = false;
 
             Validate();

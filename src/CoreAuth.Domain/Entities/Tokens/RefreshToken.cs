@@ -1,4 +1,5 @@
 ﻿using CoreAuth.Domain.Entities.Base;
+using CoreAuth.Domain.Entities.Users;
 using CoreAuth.Exceptions;
 using CoreAuth.Exceptions.BaseExceptions;
 
@@ -14,6 +15,8 @@ namespace CoreAuth.Domain.Entities.Tokens
         public bool IsExpired => DateTime.UtcNow >= ExpiresAt;
         public bool IsRevoked => RevokedAt.HasValue;
         public bool IsActive => !IsRevoked && !IsExpired;
+
+        public User? User { get; private set; }
 
         private RefreshToken() { }
 
