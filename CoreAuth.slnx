@@ -2,6 +2,10 @@
   <Folder Name="/src/">
     <Project Path="src/CoreAuth.Domain/CoreAuth.Domain.csproj" Id="b2e66a95-b817-4946-b11a-2e34b2530f4b" />
     <Project Path="src/CoreAuth.Exceptions/CoreAuth.Exceptions.csproj" Id="761fcce2-cf34-411c-95b9-e97ad1c7f3b1" />
+    <Project Path="src/CoreAuth.Infrastructure/CoreAuth.Infrastructure.csproj" Id="3f74339d-2640-4c4d-857f-e9e0668e1a1e" />
   </Folder>
-  <Folder Name="/tests/" />
+  <Folder Name="/tests/">
+    <Project Path="tests/CommonTestUtilities/CommonTestUtilities.csproj" Id="9ffbae54-2236-43ce-8aaf-e754dc5f832b" />
+    <Project Path="tests/Domain.Test/Domain.Test.csproj" Id="c227e6ee-7f79-4f97-aeb5-2f2a893ae0f6" />
+  </Folder>
 </Solution>
