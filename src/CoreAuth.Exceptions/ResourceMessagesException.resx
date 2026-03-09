@@ -120,11 +120,17 @@
   <data name="EMAIL_EMPTY" xml:space="preserve">
     <value>The email cannot be empty.</value>
   </data>
+  <data name="EMAIL_MAX_LENGTH" xml:space="preserve">
+    <value>The email must have a maximum of {0} characters.</value>
+  </data>
   <data name="EXPIRATION_DATE_EARLIER_CURRENT_DATE" xml:space="preserve">
     <value>The expiration date cannot be earlier than the current date.</value>
   </data>
   <data name="NAME_EMPTY" xml:space="preserve">
     <value>The name cannot be empty.</value>
+  </data>
+  <data name="NAME_MAX_LENGTH" xml:space="preserve">
+    <value>The name must have a maximum of {0} characters.</value>
   </data>
   <data name="PASSWORD_EMPTY" xml:space="preserve">
     <value>The password cannot be empty.</value>

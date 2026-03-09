@@ -70,6 +70,15 @@ namespace CoreAuth.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The email must have a maximum of {0} characters..
+        /// </summary>
+        public static string EMAIL_MAX_LENGTH {
+            get {
+                return ResourceManager.GetString("EMAIL_MAX_LENGTH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The expiration date cannot be earlier than the current date..
         /// </summary>
         public static string EXPIRATION_DATE_EARLIER_CURRENT_DATE {
@@ -84,6 +93,15 @@ namespace CoreAuth.Exceptions {
         public static string NAME_EMPTY {
             get {
                 return ResourceManager.GetString("NAME_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The name must have a maximum of {0} characters..
+        /// </summary>
+        public static string NAME_MAX_LENGTH {
+            get {
+                return ResourceManager.GetString("NAME_MAX_LENGTH", resourceCulture);
             }
         }
         
