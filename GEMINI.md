@@ -63,7 +63,7 @@ CoreAuth follows a comprehensive testing strategy focused on reliability and mai
 #### Test Categories
 - **Domain.Test:** Unit tests for domain entities. They verify business rules, internal state changes, and self-validation logic.
 - **Validators.Test:** Tests for command/query validators (FluentValidation). They ensure that input data meets the required constraints before reaching use cases.
-- **UseCases.Test:** Tests for application layer handlers. These tests orchestrate the interaction between domain logic and infrastructure, using mocks for external dependencies.
+- **Command.Test:** Tests for application layer handlers (commands). These tests orchestrate the interaction between domain logic and infrastructure, using mocks for external dependencies.
 - **CommonTestUtilities:** A shared project containing builders and helpers to simplify test setup and promote reuse.
 
 #### Key Patterns & Conventions

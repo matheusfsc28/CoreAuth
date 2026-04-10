@@ -4,7 +4,7 @@ using CommonTestUtilities.UseCases.Users;
 using CoreAuth.Exceptions;
 using CoreAuth.Exceptions.BaseExceptions;
 
-namespace UseCases.Test.Users.CreateUser
+namespace Command.Test.Users.CreateUser
 {
     public class CreateUserHandlerTest
     {

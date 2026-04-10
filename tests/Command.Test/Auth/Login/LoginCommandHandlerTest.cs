@@ -3,13 +3,12 @@ using CommonTestUtilities.Repositories.Users;
 using CommonTestUtilities.Requests.Users;
 using CommonTestUtilities.Security;
 using CommonTestUtilities.UseCases.Users;
-using CoreAuth.Application.Commands.Auth.Login;
 using CoreAuth.Domain.Interfaces.Security.Tokens;
 using CoreAuth.Exceptions;
 using CoreAuth.Exceptions.BaseExceptions;
 using Moq;
 
-namespace UseCases.Test.Auth.Login
+namespace Command.Test.Auth.Login
 {
     public class LoginCommandHandlerTest
     {

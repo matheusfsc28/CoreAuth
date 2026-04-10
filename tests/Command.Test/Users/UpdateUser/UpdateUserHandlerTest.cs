@@ -5,7 +5,7 @@ using CommonTestUtilities.UseCases.Users;
 using CoreAuth.Exceptions;
 using CoreAuth.Exceptions.BaseExceptions;
 
-namespace UseCases.Test.Users.UpdateUser
+namespace Command.Test.Users.UpdateUser
 {
     public class UpdateUserHandlerTest
     {
