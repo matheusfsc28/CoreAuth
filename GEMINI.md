@@ -53,6 +53,30 @@ The project is divided into several layers according to Clean Architecture:
 - Localized messages are stored in `.resx` files and accessed via `ResourceMessagesException`.
 
 ### Testing
-- Tests are located in the `tests` directory.
-- `CommonTestUtilities` provides builders (e.g., `UserBuilder`) for creating test data.
-- Domain tests verify entity behavior and validation logic.
+CoreAuth follows a comprehensive testing strategy focused on reliability and maintainability.
+
+#### Tools & Libraries
+- **xUnit:** The primary testing framework.
+- **Moq:** Used for mocking dependencies (repositories, unit of work, etc.).
+- **Bogus:** Employed to generate realistic test data (names, emails, passwords).
+
+#### Test Categories
+- **Domain.Test:** Unit tests for domain entities. They verify business rules, internal state changes, and self-validation logic.
+- **Validators.Test:** Tests for command/query validators (FluentValidation). They ensure that input data meets the required constraints before reaching use cases.
+- **UseCases.Test:** Tests for application layer handlers. These tests orchestrate the interaction between domain logic and infrastructure, using mocks for external dependencies.
+- **CommonTestUtilities:** A shared project containing builders and helpers to simplify test setup and promote reuse.
+
+#### Key Patterns & Conventions
+- **Test Data Builders:** Centralized in `CommonTestUtilities`, builders (e.g., `UserBuilder`, `CreateUserCommandBuilder`) provide a fluent API for creating data with default valid values or specific overrides.
+- **Service/Handler Builders:** Use case handlers and repository mocks are also created via builders (e.g., `CreateUserCommandHandlerBuilder`, `UserReadRepositoryBuilder`). This abstracts away the complexity of Moq setup.
+- **Naming Convention:** Tests generally follow the naming pattern:
+  - `Success`: For the happy path.
+  - `Error_[Reason]`: For failure scenarios (e.g., `Error_Email_Already_Registered`).
+- **Validation Message Verification:** Always verify that the error messages returned by the system match the expected localized keys in `ResourceMessagesException`.
+- **Failure Path Coverage:** Explicitly test for expected exceptions (e.g., `ErrorOnValidationException`, `NotFoundException`) and multiple validation errors.
+
+#### Running Tests
+Execute all tests from the root directory using the .NET CLI:
+```bash
+dotnet test
+```
