@@ -141,4 +141,13 @@
   <data name="TOKEN_EXPIRED" xml:space="preserve">
     <value>Token expirado.</value>
   </data>
+  <data name="EMAIL_ALREADY_EXISTS" xml:space="preserve">
+    <value>O e-mail já está em uso.</value>
+  </data>
+  <data name="EMAIL_INVALID" xml:space="preserve">
+    <value>O e-mail é inválido.</value>
+  </data>
+  <data name="PASSWORD_MIN_LENGTH" xml:space="preserve">
+    <value>A senha deve ter no mínimo {0} caracteres.</value>
+  </data>
 </root>

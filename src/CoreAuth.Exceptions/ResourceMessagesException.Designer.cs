@@ -131,5 +131,32 @@ namespace CoreAuth.Exceptions {
                 return ResourceManager.GetString("TOKEN_EXPIRED", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The email is already in use..
+        /// </summary>
+        public static string EMAIL_ALREADY_EXISTS {
+            get {
+                return ResourceManager.GetString("EMAIL_ALREADY_EXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The email is invalid..
+        /// </summary>
+        public static string EMAIL_INVALID {
+            get {
+                return ResourceManager.GetString("EMAIL_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The password must have at least {0} characters..
+        /// </summary>
+        public static string PASSWORD_MIN_LENGTH {
+            get {
+                return ResourceManager.GetString("PASSWORD_MIN_LENGTH", resourceCulture);
+            }
+        }
     }
 }

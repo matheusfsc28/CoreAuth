@@ -1,11 +1,13 @@
-﻿using CoreAuth.Domain.Interfaces.Data;
+using CoreAuth.Domain.Interfaces.Data;
 using CoreAuth.Domain.Interfaces.Repositories.Base;
 using CoreAuth.Domain.Interfaces.Repositories.Tokens;
 using CoreAuth.Domain.Interfaces.Repositories.Users;
+using CoreAuth.Domain.Interfaces.Security;
 using CoreAuth.Infrastructure.Data;
 using CoreAuth.Infrastructure.Repositories.Base;
 using CoreAuth.Infrastructure.Repositories.Tokens;
 using CoreAuth.Infrastructure.Repositories.Users;
+using CoreAuth.Infrastructure.Security.Password;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +20,7 @@ namespace CoreAuth.Infrastructure
         {
             AddRepositories(services);
             AddUnitOfWork(services);
+            AddSecurity(services);
 
             AddDbContext(services, configuration);
 
@@ -42,6 +45,11 @@ namespace CoreAuth.Infrastructure
         private static void AddUnitOfWork(IServiceCollection services)
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+        }
+
+        private static void AddSecurity(IServiceCollection services)
+        {
+            services.AddScoped<IPasswordHasher, BCryptHasher>();
         }
 
         private static void AddDbContext(IServiceCollection services, IConfiguration configuration)

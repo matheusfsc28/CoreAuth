@@ -5,5 +5,6 @@ namespace CoreAuth.Domain.Interfaces.Repositories.Users
 {
     public interface IUserReadRepository : IBaseReadRepository<User>
     {
+        Task<bool> ExistsActiveUserWithEmailAsync(string email, CancellationToken cancellationToken = default);
     }
 }

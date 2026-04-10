@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
+    <PackageReference Include="MediatR" Version="14.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoreAuth.Domain\CoreAuth.Domain.csproj" />
+    <ProjectReference Include="..\CoreAuth.Exceptions\CoreAuth.Exceptions.csproj" />
+    <ProjectReference Include="..\CoreAuth.Common\CoreAuth.Common.csproj" />
+  </ItemGroup>
+
 </Project>
